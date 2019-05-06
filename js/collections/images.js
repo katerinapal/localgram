@@ -1,17 +1,18 @@
-define(function(require) {
-  var Backbone = require('backbone'),
-      instagramFetch = require('helpers/index').fetch,
-      ImageModel = require('models/image');
+;
+var Backbone = require('backbone'),
+    instagramFetch = require('helpers/index').fetch,
+    ImageModel = require('models/image');
 
-  return Backbone.Collection.extend({
-    url: '/media/search',
+var bindingVariable = Backbone.Collection.extend({
+  url: '/media/search',
 
-    model: ImageModel,
+  model: ImageModel,
 
-    fetch: instagramFetch,
+  fetch: instagramFetch,
 
-    parse: function(attrs) {
-      return attrs.data;
-    }
-  });
+  parse: function(attrs) {
+    return attrs.data;
+  }
 });
+
+export default bindingVariable;

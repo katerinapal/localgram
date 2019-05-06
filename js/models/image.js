@@ -1,14 +1,15 @@
-define(function(require) {
-  var Backbone = require('backbone'),
-      instagramFetch = require('helpers/index').fetch;
+;
+var Backbone = require('backbone'),
+    instagramFetch = require('helpers/index').fetch;
 
-  return Backbone.Model.extend({
-    urlRoot: '/media',
+var bindingVariable = Backbone.Model.extend({
+  urlRoot: '/media',
 
-    fetch: instagramFetch,
+  fetch: instagramFetch,
 
-    parse: function(attrs) {
-      return (attrs.data ? attrs.data : attrs);
-    }
-  });
+  parse: function(attrs) {
+    return (attrs.data ? attrs.data : attrs);
+  }
 });
+
+export default bindingVariable;

@@ -1,7 +1,6 @@
 'use strict';
 
-var fs = require('fs'),
-    path = require('path');
+export var fs = require('fs'), path = require('path');
 
 function middleware(connect, opts) {
   return [
